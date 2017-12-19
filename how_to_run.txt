@@ -1,0 +1,10 @@
+how to run:
+
+cd into folder where "runtest.py" is located.
+
+start python interpreter using python command
+>>> python
+
+once python starts, import runtest
+>>>> import runtest
+>>>> runtest.runtest("/path/to/map1.txt", [800, 800], [900, 900])

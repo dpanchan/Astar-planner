@@ -1,0 +1,41 @@
+This code is written based on the algorthm provided on Wikipedia.
+
+https://en.wikipedia.org/wiki/A*_search_algorithm
+
+Algorithm:
+
+let start, goal be the points of interest
+let N be the neighbors of start
+  for each neighbor in N, filter out ones
+  that are obstacles
+the best neighbor 'n' to pick from N is the one 
+that minimizes
+
+ f(n) = g(n) + h(n)
+
+ where  f(n) is the overall estimate of cost from n to goal
+        g(n) is the cost from start to n
+        h(n) is the heuristic cost from n to goal
+  
+Since heuristic function choice is left to the user, 
+I have taken this hueristic.
+
+def heuristic(p1, p2):
+  to go from p1 to p2
+  take the longest diagonal
+  and then travel the rest vertically or horizontally
+  
+  p1.             p1.
+     .               .
+      .               .
+       . . .p2         .
+                        .
+                        . 
+                        .
+                        p2
+                        
+  with gets down to max(delta_x(p1, p2), delta_y(p1, p2))
+  where delta_x = absolute difference of x coordinates of p1, p2
+  and similarly delta_y
+  
+  once we find 'n', newrobot position would be 'n'.
